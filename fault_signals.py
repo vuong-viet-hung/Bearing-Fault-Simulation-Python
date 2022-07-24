@@ -65,7 +65,9 @@ def main() -> None:
     signal_duration = AVERAGE_PERIOD * N_SIMULATED_IMPULSES
     t = np.linspace(0, signal_duration, N_TIME_SAMPLES)
     x = create_fault_signal(t)
+    
     plt.plot(t, x)
+    plt.grid(True)
     plt.show()
 
 
