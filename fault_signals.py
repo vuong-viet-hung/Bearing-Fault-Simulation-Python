@@ -31,7 +31,7 @@ class DecayComponentCreator:
 class FaultSignalCreator:
     impulse_amplitudes: np.ndarray
     create_decay_component: DecayComponentCreator
-    average_period: int
+    average_period: float
     period_fluctuations: Optional[np.ndarray] = None
 
     def _create_fault_impulse(self, t: np.ndarray, idx: int) -> np.ndarray:
