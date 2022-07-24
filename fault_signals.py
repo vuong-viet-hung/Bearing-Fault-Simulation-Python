@@ -43,13 +43,13 @@ class FaultSignalCreator:
     def __call__(self, t: np.ndarray) -> np.ndarray:
         if self.period_fluctuations is None:
             self.period_fluctuations = np.zeros(len(t))
-        fault_impules = np.array(
+        fault_impulses = np.array(
             [
                 self._create_fault_impulse(t, idx)
                 for idx, _ in enumerate(self.impulse_amplitudes)
             ]
         )
-        fault_signal = np.sum(fault_impules, axis=0)
+        fault_signal = np.sum(fault_impulses, axis=0)
         return fault_signal
 
 
