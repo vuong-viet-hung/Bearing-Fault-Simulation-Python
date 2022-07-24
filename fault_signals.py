@@ -28,7 +28,7 @@ class DecayComponentCreator:
 
 
 @dataclass
-class FaultSignal:
+class FaultSignalCreator:
     impulse_amplitudes: np.ndarray
     create_decay_component: DecayComponentCreator
     average_period: int
@@ -56,7 +56,7 @@ class FaultSignal:
 def main() -> None:
     impulse_amplitudes = np.ones(N_SIMULATED_IMPULSES)
     create_decay_component = DecayComponentCreator(NATURAL_FREQUENCY, DECAY_RATE)
-    create_fault_signal = FaultSignal(
+    create_fault_signal = FaultSignalCreator(
         impulse_amplitudes,
         create_decay_component,
         AVERAGE_PERIOD,
