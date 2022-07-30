@@ -8,6 +8,10 @@ The implementation is based on:
 
 For more details on the classification of fault bearing signal using CNN, please refer to:
 
+- [An Intelligent Fault Diagnosis Approach Based on Transfer Learning](https://www.sciencedirect.com/science/article/abs/pii/S0888327018308367)
+- [CNN-Based Bearing Health Monitoring for Embedded Systems](https://mdpi-res.com/d_attachment/sensors/sensors-20-06886/article_deploy/sensors-20-06886.pdf?version=1606900214)
+- [Deep Learning-Based Bearing Fault Diagnosis]()
+
 ## II - Experiment
 The project is currently in progress, the expected outcome signal should obtain the shape similar to the figure below:
 
