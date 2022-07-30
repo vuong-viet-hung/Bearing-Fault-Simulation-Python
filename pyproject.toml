@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "fault-signal-simulation"
+name = "fault-bearing-signal-simulation"
 version = "0.1.0"
-description = ""
+description = "The program simulate fault bearing signal for CNN-based classification task."
 authors = ["vuong-viet-hung <vuongviethung156@gmail.com>"]
 
 [tool.poetry.dependencies]
