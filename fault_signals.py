@@ -15,7 +15,9 @@ AVERAGE_PERIOD = 1.0
 
 
 @dataclass
-class DecayComponentCreator: 
+class DecayComponentCreator:
+    """Class that represents the decay component of fault signal."""
+
     natural_frequency: float
     decay_rate: float
 
@@ -23,18 +25,22 @@ class DecayComponentCreator:
         decay_component = np.exp(-self.decay_rate * t) * np.cos(
             2 * np.pi * self.natural_frequency * t
         )
+        # Set signal amplitude for time before zero to zero
         decay_component[t < 0] = np.zeros(np.sum(t < 0))
         return decay_component
 
 
 @dataclass
 class FaultSignalCreator:
+    """Class that represents the fault signal."""
+
     impulse_amplitudes: np.ndarray
     create_decay_component: DecayComponentCreator
     average_period: float
     period_fluctuations: Optional[np.ndarray] = None
 
     def _create_fault_impulse(self, t: np.ndarray, idx: int) -> np.ndarray:
+        """Create a single fault impulse."""
         fault_impulse = self.impulse_amplitudes[idx] * self.create_decay_component(
             t - idx * self.average_period - self.period_fluctuations[idx]
         )
@@ -65,7 +71,7 @@ def main() -> None:
     signal_duration = AVERAGE_PERIOD * N_SIMULATED_IMPULSES
     t = np.linspace(0, signal_duration, N_TIME_SAMPLES)
     x = create_fault_signal(t)
-    
+
     plt.plot(t, x)
     plt.grid(True)
     plt.show()
